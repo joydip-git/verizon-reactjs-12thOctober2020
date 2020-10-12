@@ -52,7 +52,7 @@ JavaScript:
 	6. call, apply, bind
 	7. object inheritance
 	8. prototype chaining
-	9. new features (ES6-2015): class, extends, constructor, super
+	9. new features (ES6-2015): class, extends, constructor, super, object destructuring, const, let, spread operator
 	10. Modules and its purpose:
 		abstract code: to delegate functionality to specialised libraries so that we don't have 
                 to understand the complexity of their actual implementation
