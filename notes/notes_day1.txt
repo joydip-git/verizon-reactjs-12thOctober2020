@@ -43,6 +43,14 @@ Webpack Snippets
 
 
 JavaScript:
-a. object
+
 	1. how to create an object in JS?
+	2. what is protoype?
+	3. pupose of prototype
+	4. contextual binding - closure and lexical 'this' problem
+	5. arrow operator
+	6. call, apply, bind
+	7. object inheritance
+	8. prototype chaining
+	9. new features (ES6-2015): class, extends, constructor, super
 
