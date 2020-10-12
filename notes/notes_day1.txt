@@ -29,3 +29,15 @@ f. real time deployment:
 	2. push the docker image in docker hub
 	2. run a container in Azure by pulling the image from docker hub
 
+
+VS Code extensions:
+ES7 React/Redux/React-Native/JS snippets
+vscode-icons
+HTML Boilerplate
+Babel JavaScript
+Babel ES6/ES7
+prettier
+Prettier Formatter
+Webpack
+Webpack Snippets
+
