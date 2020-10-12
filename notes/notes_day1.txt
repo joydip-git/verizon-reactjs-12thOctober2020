@@ -41,3 +41,8 @@ Prettier Formatter
 Webpack
 Webpack Snippets
 
+
+JavaScript:
+a. object
+	1. how to create an object in JS?
+
