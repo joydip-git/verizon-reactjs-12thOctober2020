@@ -1,0 +1,31 @@
+JavaScript:
+a. prototype based programming
+b. new features of JS (ES6 onward)
+
+React JS:
+a. Introduction
+b. create react js application from scratch without help of any tool
+c. create react js application with the help of creat-react-app tool
+d. different concepts:
+	1. component and element
+	2. functional and class component
+	3. state and props in component
+	4. lifecycle of component
+	5. handle error
+	6. Virtual DOM
+	7. Pure Component, memo
+	8. ref
+	9. list of elements (key)
+	10. styling
+	11. redux
+	12. react -redux with asynchronous
+	13. redux thunk 
+	14. redux saga
+	15. forms
+	16. static type checking
+e. testing in React
+f. real time deployment:
+	1. dockerize the react app (dev & prod mode)
+	2. push the docker image in docker hub
+	2. run a container in Azure by pulling the image from docker hub
+
