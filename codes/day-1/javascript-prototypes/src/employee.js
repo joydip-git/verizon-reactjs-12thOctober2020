@@ -10,4 +10,9 @@ class employee {
         return this.basicPay + this.daPay + this.hraPay;
     }
 }
+var add = (a, b) => (a + b);
 //console.log(employee.prototype)
+module.exports = {
+    employee, //employee:employee
+    add
+}

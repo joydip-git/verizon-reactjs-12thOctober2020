@@ -48,9 +48,17 @@ JavaScript:
 	2. what is protoype?
 	3. pupose of prototype
 	4. contextual binding - closure and lexical 'this' problem
-	5. arrow operator
+	5. arrow operator (ES6 new feature)
 	6. call, apply, bind
 	7. object inheritance
 	8. prototype chaining
 	9. new features (ES6-2015): class, extends, constructor, super
+	10. Modules and its purpose:
+		abstract code: to delegate functionality to specialised libraries so that we don't have 
+                to understand the complexity of their actual implementation
+		encapsulate code: to hide code inside the module if we don't want the code to be changed
+		reuse code: to avoid writing the same code over and over again
+		manage dependencies: to easily change dependencies without rewriting our code
+	11. Module formats: IIFE, Common JS, AMD, UMD, ES6 modules,...
+	12. module loaders
 
