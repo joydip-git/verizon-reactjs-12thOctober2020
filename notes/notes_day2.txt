@@ -1,0 +1,4 @@
+1. introduction to react js
+2. create a react application
+	a. without tool
+	b. with create-react-app tool

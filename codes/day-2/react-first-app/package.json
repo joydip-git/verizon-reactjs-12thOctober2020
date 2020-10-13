@@ -1,0 +1,25 @@
+{
+  "name": "react-first-app",
+  "version": "1.0.0",
+  "description": "simple react app",
+  "main": "./src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joydip-git/verizon-reactjs-12thOctober2020.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joydip-git/verizon-reactjs-12thOctober2020/issues"
+  },
+  "homepage": "https://github.com/joydip-git/verizon-reactjs-12thOctober2020#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5"
+  }
+}
