@@ -1,4 +1,33 @@
 1. introduction to react js
 2. create a react application
 	a. without tool
+	create package.json: npm init
+	1. React packages:
+		a. react (npm i react --save)
+		b. react-dom (npm i react-dom --save)
+
+	2. compiler packages:
+		a. core - @babel/core (npm i @babel/core --save-dev)
+		b. presets - 
+			i. ES6 - @babel/preset-env (npm i @babel/preset-env --save-dev)
+			ii. React - @babel/preset-react (npm i @babel/preset-react --save-dev)
+		c.cli - @babel/cli (npm i @babel/cli --save-dev)
+
+	3. bundler packages:
+		a. core - webpack (npm i webpack --save-dev)
+		b. cli - webpack-cli (npm i webpack-cli --save-dev)
+		c. plugins: html-webpack-plugin (npm i html-webpack-plugin --save-dev)
+			    clean-webpack-plugin (npm i clean-webpack-plugin --save-dev)
+		
+	4. loaders:
+		a. html - html-loader (npm i html-loader --save-dev)
+		b. babel - babel-loader (npm i babel-loader --save-dev)
+		c. css - css-loader, style-loader (npm i css-loader style-loader --save-dev)
+		d. xml - xml-loader (npm i xml-loader --save-dev)
+		e. csv - csv-loader (npm i csv-loader --save-dev)
+		f. images - file-loader (npm i file-loader --save-dev)
+
+	5. app dev server:
+		lite-server/webpack-dev-server (npm i webpack-dev-server --save-dev)
+
 	b. with create-react-app tool
