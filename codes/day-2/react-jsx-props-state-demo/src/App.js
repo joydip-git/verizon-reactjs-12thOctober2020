@@ -5,25 +5,43 @@ import Welcome from './Welcome';
 //state, setState(args):void, render():ReactNode
 class App extends Component {
   constructor() {
-    super();//Component.call(this,...);
+    super();
+    this.state = {
+      value: 20,
+      name: 'joydip'
+    }    
+    //this.changeValueHandler = this.changeValueHandler.bind(this);
   }
 
-  //console.log('app rendered')
-  //const welcomeElement = Welcome({data:20});
-  // let value = 20;
-  // const changeValueHandler = function (e) {
-  //   console.log(e.target.value)
-  //   value = parseInt(e.target.value);
-  //   console.log(value)
-  // }
+  changeValueHandler = (e) => {
+    //console.log(this)
+    //console.log(e)
+    let newValue = parseInt(e.target.value);
+    console.log(newValue)
+    //this.state.value = newValue;
+    this.setState(
+      {
+        value: newValue
+      },
+      () => console.log(this.state.value)
+    );
+    // console.log(this.state.value)
+    // setTimeout(() => {
+    //   console.log(this.state.value)
+    // }, 1000);
 
+  }
+
+  //lifecycle event hook
   render() {
-    const welcomeElement = Welcome({ data: 20 });
+    //const welcomeElement = Welcome({ data: 20 });
     return (
       <div className="App" >
+        Random Text:&nbsp;{this.props.randomText}
         {/* {welcomeElement} */}
-        {/* <Welcome data={20} /> */}
-        {welcomeElement}
+        <Welcome data={this.state.value} name={this.state.name} handler={this.changeValueHandler} />
+        <br />
+        {/* <Welcome data={this.state.value} handler={this.changeValueHandler.bind(this)} /> */}
       </div>
     );
   }

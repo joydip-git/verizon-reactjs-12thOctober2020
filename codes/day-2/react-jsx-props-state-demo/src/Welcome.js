@@ -3,18 +3,21 @@ import React from 'react'
 /**
  * properties = {
  *   data:20,
- *   handler:changeValueHandler
+ *   handler:changeValueHandler,
+ *   name:'joydip'
  * }
  */
 export default function Welcome(properties) {
     console.log('welcome rendered')
-    //let value = properties.data + 1;
+    //properties.data = properties.data + 1;
     const divStyle = {
         backgroundColor: 'lime'
     }
     return (
         <div id='myDiv' style={divStyle}>
             Hello React JS
+            <br />
+            <span>{properties.name}</span>
             <br />
             Data:&nbsp;
             <input type='text' value={properties.data} onChange={properties.handler} />

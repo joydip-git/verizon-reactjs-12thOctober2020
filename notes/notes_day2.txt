@@ -37,3 +37,15 @@
 
 
 	>npx create-react-app react-second-app
+
+React Components:
+a. functional component (NO state, NO render, NO other lifecycle events/hooks also) NO this
+	- presentational component/stateless component
+b. class component (constructor function) (state, render, other lifecycle events/hooks) this
+	- stateful component
+c. JSX
+d. how to pass data from one component to another (via properties/props)
+e. how to pass functions as callback from one component to another (via props)
+f. how to use state to maintain state data (in class component)
+g. how to update state (using this.setState() method)
+h. how to pass data from child (nested) component back to parent component
