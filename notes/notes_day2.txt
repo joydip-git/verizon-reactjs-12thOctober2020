@@ -32,3 +32,8 @@
 		lite-server/webpack-dev-server (npm i webpack-dev-server --save-dev)
 
 	b. with create-react-app tool
+	>npm i create-react-app -g
+	>create-react-app react-second-app
+
+
+	>npx create-react-app react-second-app
