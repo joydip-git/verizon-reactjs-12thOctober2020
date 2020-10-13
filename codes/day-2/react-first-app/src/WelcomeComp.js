@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 //component: WelcomeComp
 //element: welcomeCompElement
 const WelcomeComp = () => {
@@ -16,14 +16,27 @@ const WelcomeComp = () => {
      *      }
      * }
      */
-    const welcomeCompElement = React.createElement(
-        'span',
-        {
-            id: 'welcomeSpan',
-            style: { fontSize: 'medium' }
-        },
-        'Hi React'
-    );    
+    // const welcomeCompElement = React.createElement(
+    //     'div',
+    //     {
+    //        
+    //     },
+    //     [
+    //      React.createElement('span',{},'Hello React JS'), 
+    //      React.createElement('span',{},'Hello React JS')
+    //     ]
+    // );  
+    const spanStyle = {
+        fontSize: 'medium'
+    }
+    const welcomeCompElement = (
+        <div>
+            <span>welcome</span>
+            <span id='welcomeSpan' style={spanStyle}>
+                Hello React JS
+            </span>
+        </div>
+    );
     return welcomeCompElement;
 }
 export default WelcomeComp;

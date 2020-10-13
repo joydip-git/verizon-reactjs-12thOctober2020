@@ -11,6 +11,7 @@
 		b. presets - 
 			i. ES6 - @babel/preset-env (npm i @babel/preset-env --save-dev)
 			ii. React - @babel/preset-react (npm i @babel/preset-react --save-dev)
+			(this preset brings some plugins required to transform JSX code into JS code)
 		c.cli - @babel/cli (npm i @babel/cli --save-dev)
 
 	3. bundler packages:
