@@ -1,6 +1,7 @@
 import * as React from 'react'
-
-const Welcome = () => {
+//component: WelcomeComp
+//element: welcomeCompElement
+const WelcomeComp = () => {
     //<span id='welcomeSpan' style='font-size:medium'>Hello React</span>
 
     /**
@@ -15,7 +16,7 @@ const Welcome = () => {
      *      }
      * }
      */
-    const welcomeElement = React.createElement(
+    const welcomeCompElement = React.createElement(
         'span',
         {
             id: 'welcomeSpan',
@@ -23,6 +24,6 @@ const Welcome = () => {
         },
         'Hello React'
     );    
-    return welcomeElement;
+    return welcomeCompElement;
 }
-export default Welcome;
+export default WelcomeComp;
