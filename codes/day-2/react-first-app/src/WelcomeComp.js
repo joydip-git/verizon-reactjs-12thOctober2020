@@ -22,7 +22,7 @@ const WelcomeComp = () => {
             id: 'welcomeSpan',
             style: { fontSize: 'medium' }
         },
-        'Hello React'
+        'Hi React'
     );    
     return welcomeCompElement;
 }
