@@ -5,31 +5,33 @@ import Person from './Person';
 class App extends Component {
   constructor() {
     super()
-    this.state = {
-      errorMessage: '',
-      data: 100,
-      counter: 0,
-      people: [
-        {
-          id: 1,
-          name: 'anil',
-          age: 20
-        },
-        {
-          id: 2,
-          name: 'sunil',
-          age: 30
-        },
-        {
-          id: 3,
-          name: 'joy',
-          age: 40
-        }
-      ]
-    }
-    this.appInputRef = React.createRef(); //{current:}
-    this.counterComponentRef = React.createRef();
-    console.log('[App] ctor called')
+    console.log('[App] created')
+  }
+  //myData = ;
+
+  appInputRef = createRef(); //{current:}
+  counterComponentRef = createRef();
+  state = {
+    errorMessage: '',
+    show: true,
+    counter: 0,
+    people: [
+      {
+        id: 1,
+        name: 'anil',
+        age: 20
+      },
+      {
+        id: 2,
+        name: 'sunil',
+        age: 30
+      },
+      {
+        id: 3,
+        name: 'joy',
+        age: 40
+      }
+    ]
   }
   personChangeHandler = (propertyName, newPropertyValue, personId) => {
     const foundPersonRef = this.state.people.find((p) => p.id === personId);
@@ -57,9 +59,7 @@ class App extends Component {
       }
     }, () => console.log(this.state));
   }
-  componentDidMount() {
-    
-  }
+
   inputHandler = () => {
     //this.appInputRef.current.focus();
     if (this.appInputRef.current.value === '') {
@@ -72,11 +72,20 @@ class App extends Component {
       })
     }
   }
-
+  changeShowHandler = () => {
+    this.setState(ps => {
+      return {
+        show: !ps.show
+      }
+    })
+  }
   render() {
     console.log('[App] rendered')
     return (
       <div className='container'>
+        <button onClick={this.changeShowHandler}>{this.state.show ? 'Hide' : 'Show'}</button>
+        <br />
+        <br />
         {/* <button onClick={() => this.counterComponentRef.current.focusCounterInputHandler().focus()}>Focus Counter Input From App</button> */}
         <button onClick={() => this.counterComponentRef.current.focus()}>Focus Counter Input From App</button>
         <br />
@@ -87,19 +96,28 @@ class App extends Component {
         }
         <br />
         <button onClick={this.inputHandler}>Focus</button>
-        <div className='panel panel-primary'>
-          {
-            this.state.people.map((p) => {
-              return <Person key={p.id} personData={p} changeHandler={this.personChangeHandler} />
-            })
-          }
-        </div>
+        {
+          this.state.show && (
+            <div className='panel panel-primary'>
+              {
+                this.state.people.map((p) => {
+                  return <Person key={p.id} personData={p} changeHandler={this.personChangeHandler} />
+                })
+              }
+            </div>
+          )
+        }
+        <br />
         <br />
         <div>
           <Counter ref={this.counterComponentRef} counterValue={this.state.counter} changeCounter={this.changeCounterHandler} />
         </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log('[App] mounted in ADOM')
   }
 }
 export default App;

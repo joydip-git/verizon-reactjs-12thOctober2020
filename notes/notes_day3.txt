@@ -15,3 +15,22 @@
 App-->wrap ProductList (functional component)
 ProductList-->state: products [{name:, id:, price:, rating: }]
 ProductDetail--> one product detail product (on button click i want the product detail to be updated)
+
+
+lifecycle:
+1. creation and mounting
+	a. constructor
+	b. render
+	c. componentDidMount
+
+2. update
+	getDerivedStateFromProps
+	shouldComponentUpdate
+	render
+	getSnapshotBeforeUpdate
+	componentDidUpdate
+
+3. destruction:
+	- componentWillUnmount()
+
+4. error
