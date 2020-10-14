@@ -27,8 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Person personData={this.state.people[0]} />
+      <div className='container'>
+        <div className='panel panel-primary'>
+          <Person personData={this.state.people[0]} />
+        </div>
       </div>
     );
   }
