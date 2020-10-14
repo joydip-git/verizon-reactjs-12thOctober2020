@@ -11,3 +11,7 @@
 	Note: you are setting reference to the nested component instance, rather than to a child element of nested component
 	c. how to refer a functional component which is nested inside a parent component (class/function), from the parent component itself (so that you can access members - functions/data/design elements etc. of the nested component)
 	Note: there is no instance of functional component. so the reference of RefObj will be forwarded to the functional component when use React.forwardRef (as separate argument, NOT as part of the props)
+
+App-->wrap ProductList (functional component)
+ProductList-->state: products [{name:, id:, price:, rating: }]
+ProductDetail--> one product detail product (on button click i want the product detail to be updated)

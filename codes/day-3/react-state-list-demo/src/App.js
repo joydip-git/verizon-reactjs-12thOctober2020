@@ -57,7 +57,9 @@ class App extends Component {
       }
     }, () => console.log(this.state));
   }
-
+  componentDidMount() {
+    
+  }
   inputHandler = () => {
     //this.appInputRef.current.focus();
     if (this.appInputRef.current.value === '') {
