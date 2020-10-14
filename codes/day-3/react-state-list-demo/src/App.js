@@ -28,6 +28,7 @@ class App extends Component {
       ]
     }
     this.appInputRef = React.createRef(); //{current:}
+    this.counterComponentRef = React.createRef();
     console.log('[App] ctor called')
   }
   personChangeHandler = (propertyName, newPropertyValue, personId) => {
@@ -74,6 +75,8 @@ class App extends Component {
     console.log('[App] rendered')
     return (
       <div className='container'>
+        <button onClick={() => this.counterComponentRef.current.focusCounterInputHandler()}>Focus Counter Input From App</button>
+        <br />
         App Input:&nbsp;<input type='text' ref={this.appInputRef}
           onChange={this.inputHandler} />&nbsp;
         {
@@ -90,7 +93,7 @@ class App extends Component {
         </div>
         <br />
         <div>
-          <Counter counterValue={this.state.counter} changeCounter={this.changeCounterHandler} />
+          <Counter ref={this.counterComponentRef} counterValue={this.state.counter} changeCounter={this.changeCounterHandler} />
         </div>
       </div>
     );
