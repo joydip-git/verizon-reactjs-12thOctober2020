@@ -1,5 +1,5 @@
 1. state-- setState
-2. list of elements
+2. list of elements and key property
 3. component lifecycle events and hooks - PureComponent, memo() function
 4. error handling, error boundary, handing error using HOC
 5. HOC
