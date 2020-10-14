@@ -51,6 +51,7 @@ export default class Counter extends Component {
 const Counter = React.forwardRef((properties, referenceOfRefObj) => {
     const { counterValue, changeCounter } = properties;
     console.log('[Counter] rendered')
+
     return (
         <>
             Counter Value: &nbsp;
