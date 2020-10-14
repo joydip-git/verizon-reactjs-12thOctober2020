@@ -5,4 +5,9 @@
 5. HOC
 6. Render Prop
 7. Fragments
-8. ref: how to refer to an element in design of a component from the component
+8. ref: 
+	a. how to refer to an element in design of a component (functional/class) from the component
+	b. how to refer a class component which is nested inside a parent component (class/function), from the parent component itself (so that you can access members - functions/data/design elements etc. of the nested component)
+	Note: you are setting reference to the nested component instance, rather than to a child element of nested component
+	c. how to refer a functional component which is nested inside a parent component (class/function), from the parent component itself (so that you can access members - functions/data/design elements etc. of the nested component)
+	Note: there is no instance of functional component. so the reference of RefObj will be forwarded to the functional component when use React.forwardRef (as separate argument, NOT as part of the props)

@@ -17,6 +17,7 @@ import React, { Component } from 'react'
 //         </>
 //     )
 // }
+/*
 export default class Counter extends Component {
     constructor() {
         super()
@@ -24,7 +25,8 @@ export default class Counter extends Component {
     }
 
     focusCounterInputHandler = () => {
-        this.counterInputRef.current.focus();
+        //this.counterInputRef.current.focus();
+        return this.counterInputRef.current;
     }
     render() {
         const { counterValue, changeCounter } = this.props;
@@ -39,3 +41,23 @@ export default class Counter extends Component {
         )
     }
 }
+*/
+/**
+ * {
+ *  x:{counterValue:0, chnageCounter:<handler>}
+ *  ref:reference to the RefObj
+ * }
+ */
+const Counter = React.forwardRef((properties, referenceOfRefObj) => {
+    const { counterValue, changeCounter } = properties;
+    console.log('[Counter] rendered')
+    return (
+        <>
+            Counter Value: &nbsp;
+            <input value={counterValue} type='text' ref={referenceOfRefObj} />
+            <br />
+            <button onClick={changeCounter}>Increase Counter</button>
+        </>
+    )
+})
+export default Counter;

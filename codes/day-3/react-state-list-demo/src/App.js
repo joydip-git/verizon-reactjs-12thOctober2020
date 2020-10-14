@@ -75,7 +75,8 @@ class App extends Component {
     console.log('[App] rendered')
     return (
       <div className='container'>
-        <button onClick={() => this.counterComponentRef.current.focusCounterInputHandler()}>Focus Counter Input From App</button>
+        {/* <button onClick={() => this.counterComponentRef.current.focusCounterInputHandler().focus()}>Focus Counter Input From App</button> */}
+        <button onClick={() => this.counterComponentRef.current.focus()}>Focus Counter Input From App</button>
         <br />
         App Input:&nbsp;<input type='text' ref={this.appInputRef}
           onChange={this.inputHandler} />&nbsp;
