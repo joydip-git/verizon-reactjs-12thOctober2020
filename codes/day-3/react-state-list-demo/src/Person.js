@@ -43,7 +43,11 @@ const Person = (props) => {
     );
 }
 */
-
+/*
+{
+    personId:1
+}
+*/
 // class Person extends PureComponent {
 class Person extends Component {
     constructor() {
@@ -67,12 +71,16 @@ class Person extends Component {
     }
     render() {
         console.log('[Person] rendered')
-        const { personData, changeHandler } = this.props;
+        const { personData, changeHandler, select } = this.props;
         return (
             // <React.Fragment>
             <>
                 <br />
-                <div className='panel panel-heading'>
+                <div
+                    className='panel panel-heading'
+                    style={{ border: '2px solid black', borderRadius: '5px' }}
+                    onClick={() => select(personData.id)}
+                >
                     Details of <b>{personData.name}</b>
                 </div>
                 <div className='panel panel-body'>

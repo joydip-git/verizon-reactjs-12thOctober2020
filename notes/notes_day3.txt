@@ -20,8 +20,9 @@ ProductDetail--> one product detail product (on button click i want the product 
 lifecycle:
 1. creation and mounting
 	a. constructor
-	b. render
-	c. componentDidMount
+	b. getDerivedStateFromProps
+	c. render
+	d. componentDidMount
 
 2. update
 	getDerivedStateFromProps
@@ -31,6 +32,9 @@ lifecycle:
 	componentDidUpdate
 
 3. destruction:
+	- getDerivedStateFromProps
 	- componentWillUnmount()
 
 4. error
+	- getDerivedStateFromError
+	- componentDidCatch

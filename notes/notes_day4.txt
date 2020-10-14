@@ -1,0 +1,13 @@
+1. error handling, error boundary
+2. HOC - handing error using HOC
+3. Render Prop
+Forms
+
+4. Hooks in React (16.8)
+5. HTTP access - fetch/Axios
+6. Redux - state management
+   a. basic redux
+   b. async call in Redux using Thunk middleware
+   c. Saga Middleware - generator function in JS
+7. Routing
+8. Deployment

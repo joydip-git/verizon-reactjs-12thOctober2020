@@ -1,37 +1,29 @@
 import React, { Component, createRef } from 'react'
 import Counter from './Counter';
 import Person from './Person';
+import PersonDetail from './PersonDetail';
+import { people } from './peopleModel'
 
 class App extends Component {
-  constructor() {
-    super()
-    console.log('[App] created')
-  }
+  // constructor() {
+  //   super()
+  //   console.log('[App] created')
+  // }
   //myData = ;
 
   appInputRef = createRef(); //{current:}
   counterComponentRef = createRef();
   state = {
     errorMessage: '',
+    personId: 0,
     show: true,
     counter: 0,
-    people: [
-      {
-        id: 1,
-        name: 'anil',
-        age: 20
-      },
-      {
-        id: 2,
-        name: 'sunil',
-        age: 30
-      },
-      {
-        id: 3,
-        name: 'joy',
-        age: 40
-      }
-    ]
+    people: people
+  }
+  static getDerivedStateFromProps(newProps, lastState) {
+    return {
+      counter: lastState.counter + newProps.val
+    }
   }
   personChangeHandler = (propertyName, newPropertyValue, personId) => {
     const foundPersonRef = this.state.people.find((p) => p.id === personId);
@@ -79,6 +71,12 @@ class App extends Component {
       }
     })
   }
+
+  selectPersonHadler = (personId) => {
+    this.setState({
+      personId: personId
+    })
+  }
   render() {
     console.log('[App] rendered')
     return (
@@ -101,13 +99,20 @@ class App extends Component {
             <div className='panel panel-primary'>
               {
                 this.state.people.map((p) => {
-                  return <Person key={p.id} personData={p} changeHandler={this.personChangeHandler} />
+                  return <Person
+                    key={p.id}
+                    personData={p}
+                    changeHandler={this.personChangeHandler}
+                    select={this.selectPersonHadler}
+                  />
                 })
               }
             </div>
           )
         }
         <br />
+        <br />
+        { this.state.personId > 0 && <PersonDetail pid={this.state.personId} />}
         <br />
         <div>
           <Counter ref={this.counterComponentRef} counterValue={this.state.counter} changeCounter={this.changeCounterHandler} />

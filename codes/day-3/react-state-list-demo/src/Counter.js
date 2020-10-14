@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, memo, forwardRef } from 'react'
 /**
  * {
  * counterValue:0,
@@ -48,7 +48,7 @@ export default class Counter extends Component {
  *  ref:reference to the RefObj
  * }
  */
-const Counter = React.forwardRef((properties, referenceOfRefObj) => {
+const Counter = forwardRef((properties, referenceOfRefObj) => {
     const { counterValue, changeCounter } = properties;
     console.log('[Counter] rendered')
 
@@ -61,4 +61,4 @@ const Counter = React.forwardRef((properties, referenceOfRefObj) => {
         </>
     )
 })
-export default Counter;
+export default memo(Counter);
