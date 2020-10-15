@@ -1,9 +1,11 @@
 1. error handling, error boundary
-2. HOC - handing error using HOC
+2. HOC - handing error using HOC, cutomHook to replace HOC and RP
 3. Render Prop
+
 Forms
 
 4. Hooks in React (16.8)
+
 5. HTTP access - fetch/Axios
 6. Redux - state management
    a. basic redux
@@ -22,11 +24,11 @@ a. hoc/rp --> injecting/including the common functionalities in react app, that 
 
 custom hooks
 
-b. componentDidUpdate(){
+b. useEffect(){
 	applyStyle()
         fetchData()
 	//unsubscribe
-   }
+   },[sfye]
    applyStyle=()=>{}
    fetchData=()=>{}
 
@@ -34,3 +36,17 @@ c. class and this
 
 React Version: 16.8
 Hooks
+
+
+ function(args)
+
+built-in hooks:
+a. state hook (useState())
+1. multiple states van be availed
+2. state need not necessarily has to be a JS object
+3. state hook returns state value and a function to update the state value
+4. function to update the state value, has two versions.
+   In one, you can pass just the new state value
+   In another, you can pass a callback to which current state will be passed as argument. you must return the new state value from the callback function
+
+b. effect hook (useEffect())
