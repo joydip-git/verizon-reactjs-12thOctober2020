@@ -1,33 +1,23 @@
-import React, { Component } from 'react'
+import React, { createRef } from 'react'
 import ClickCounter from './ClickCounter'
 import HoverCounter from './HoverCounter'
 
-export default class Counter extends Component {
-    state = {
-        counter: 0
-    }
-    increaseCounter = () => {
-        this.setState(
-            (ps) => {
-                return {
-                    counter: ps.counter + 1
-                }
-            }
-        )
-    }
-    render() {
-        return (
-            <div>
-                <ClickCounter
-                    counter={this.state.counter}
-                    changeCounter={this.increaseCounter}
-                />
-                <br />
-                <HoverCounter
-                    counter={this.state.counter}
-                    changeCounter={this.increaseCounter}
-                />
-            </div>
-        )
-    }
+export default function Counter() {
+    // const inputClickCounterRef = createRef();
+    // const focusInput = () => {
+    //     console.log(inputClickCounterRef)
+    //     console.log(inputClickCounterRef.current)
+    //     inputClickCounterRef.current.focus();
+    // }
+    return (
+        <div>
+            {/* <ClickCounter ref={inputClickCounterRef} /> */}
+            <ClickCounter name={'joydip'} />
+            <br />
+            {/* <button onClick={focusInput}>Focus</button> */}
+            <br />
+            <HoverCounter data={200} />
+        </div>
+    )
+
 }

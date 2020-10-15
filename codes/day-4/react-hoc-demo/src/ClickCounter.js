@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
+import withCounter from './withCounter';
 
-export default function ClickCounter(props) {
-    let { counter, changeCounter } = props;
+let ClickCounter = (props) => {
+    let { counter, changeCounter, name } = props;
     return (
         <div>
-            <span>Click Counter Value:&nbsp;{counter}</span>
+            Name:&nbsp;{name}
+            <br/>
+            Click Counter Value:&nbsp;<input type='text' value={counter} />
             <br />
             <button onClick={changeCounter}>Click to Increase Counter</button>
+            {/* <input type='text' ref={ref} /> */}
         </div>
     )
-
 }
+
+// ClickCounter = withCounter(ClickCounter);
+// export default ClickCounter;
+export default withCounter(ClickCounter, 10);
