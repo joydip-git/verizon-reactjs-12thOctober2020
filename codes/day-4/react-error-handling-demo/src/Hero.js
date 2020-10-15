@@ -1,4 +1,5 @@
 import React from 'react'
+import withError from './withError';
 
 // export default function Hero(props) {
 //     const { heroName } = props;
@@ -17,15 +18,30 @@ import React from 'react'
 //     }
 // }
 
-export default function Hero(props) {
+// export default function Hero(props) {
+//     console.log('[Hero] rendered')
+//     const { heroName } = props;
+//     if (heroName === 'Joker') {
+//         throw new Error('Not a hero');
+//     }    
+//     return (
+//         <span>
+//             Hero Name: &nbsp; {heroName}
+//         </span>
+//     );
+// }
+
+function Hero(props) {
     console.log('[Hero] rendered')
     const { heroName } = props;
     if (heroName === 'Joker') {
         throw new Error('Not a hero');
-    }    
+    }
     return (
         <span>
             Hero Name: &nbsp; {heroName}
         </span>
     );
 }
+
+export default withError(Hero);

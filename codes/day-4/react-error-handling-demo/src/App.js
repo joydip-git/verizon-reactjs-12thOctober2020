@@ -6,13 +6,13 @@ import Hero from './Hero';
 function App() {
   return (
     <div className="App">      
-      <ErrorBoundary>
+      {/* <ErrorBoundary> */}
         <Hero heroName={'Batman'} />
         <br />
         <Hero heroName={'Superman'} />
         <br />
         <Hero heroName={'Joker'} />
-      </ErrorBoundary>
+      {/* </ErrorBoundary> */}
     </div>
   );
 }
