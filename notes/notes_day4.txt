@@ -11,3 +11,26 @@ Forms
    c. Saga Middleware - generator function in JS
 7. Routing
 8. Deployment
+
+Hooks:
+
+a. hoc/rp --> injecting/including the common functionalities in react app, that have been abstracted to separate place (component)
+
+ var configuredComp = configure({valueProp:'', handlerProp:''})
+ withCounter(memo(clickcounter))
+ //wrapper hell
+
+custom hooks
+
+b. componentDidUpdate(){
+	applyStyle()
+        fetchData()
+	//unsubscribe
+   }
+   applyStyle=()=>{}
+   fetchData=()=>{}
+
+c. class and this
+
+React Version: 16.8
+Hooks
