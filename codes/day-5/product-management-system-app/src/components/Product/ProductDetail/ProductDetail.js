@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useLocation, useParams, Link, Redirect } from 'react-router-dom'
-import { getProductById } from '../../../service/productService';
+//import { getProductById } from '../../../service/productService';
+import { useSelector, useDispatch } from 'react-redux'
+import { getProductAsyncAction } from '../../../redux/actions/getProductActions'
 
 // export default function ProductDetail(props) {
 //     const { history, match, location } = props;
@@ -20,15 +22,21 @@ import { getProductById } from '../../../service/productService';
 
 export default function ProductDetail() {
 
-    const [productState, setProductstate] = useState({ error: '', loading: true, product: null });
+    const product = useSelector((state) => state.singleProduct.product);
+    const loading = useSelector((state) => state.singleProduct.loading);
+    const errorMessage = useSelector((state) => state.singleProduct.errorMessage);
+    const dispatch = useDispatch();
+
+    // const [productState, setProductstate] = useState({ error: '', loading: true, product: null });
 
     const params = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        getProductById(parseInt(params.id))
-            .then(resp => setProductstate({ error: '', loading: false, product: resp.data }))
-            .catch(e => setProductstate({ error: e.message, loading: false, product: null }))
+        // getProductById(parseInt(params.id))
+        //     .then(resp => setProductstate({ error: '', loading: false, product: resp.data }))
+        //     .catch(e => setProductstate({ error: e.message, loading: false, product: null }))
+        dispatch(getProductAsyncAction(parseInt(params.id)))
         return () => {
 
         }
@@ -36,19 +44,22 @@ export default function ProductDetail() {
 
     let design = null;
 
-    if (productState.loading) {
+    // if (productState.loading) {
+    //if (productState.error !== '')
+    //if (productState.product === null) 
+    if (loading) {
         design = <span>Loading...</span>
-    } else if (productState.error !== '') {
-        design = <span>{productState.error}</span>
-    } else if (productState.product === null) {
+    } else if (errorMessage !== '') {
+        design = <span>{errorMessage}</span>
+    } else if (product === null) {
         design = <span>product not found</span>
     } else {
         design = (
             <>
-                <div classNameName='panel panel-primary'>
+                <div className='panel panel-primary'>
                     <div className='panel-heading' style={{ fontSize: 'large' }}>
-                        {productState.product.productName}
-                        <Link to={'/update/' + productState.product.productId} className='btn btn-primary' style={{ width: '80px', float: 'right' }}>
+                        {product.productName}
+                        <Link to={'/update/' + product.productId} className='btn btn-primary' style={{ width: '80px', float: 'right' }}>
                             Edit
                         </Link>
                     </div>
@@ -58,29 +69,29 @@ export default function ProductDetail() {
                             <div className='col-md-6'>
                                 <div className='row'>
                                     <div className='col-md-3'>Name:</div>
-                                    <div className='col-md-6'>{productState.product.productName}</div>
+                                    <div className='col-md-6'>{product.productName}</div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-3'>Code:</div>
-                                    <div className='col-md-6'>{productState.product.productCode}</div>
+                                    <div className='col-md-6'>{product.productCode}</div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-3'>Description:</div>
-                                    <div className='col-md-6'>{productState.product.description}</div>
+                                    <div className='col-md-6'>{product.description}</div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-3'>Availability:</div>
-                                    <div className='col-md-6'>{productState.product.releaseDate}</div>
+                                    <div className='col-md-6'>{product.releaseDate}</div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-3'>Price:</div>
 
-                                    <div className='col-md-6'>{productState.product.price}</div>
+                                    <div className='col-md-6'>{product.price}</div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-3'>5 Star Rating:</div>
                                     <div className='col-md-6'>
-                                        {productState.product.starRating}
+                                        {product.starRating}
                                     </div>
                                 </div>
                             </div>
@@ -89,8 +100,8 @@ export default function ProductDetail() {
                                 <img
                                     className='center-block img-responsive'
                                     style={{ width: '200px', margin: '2px' }}
-                                    src={productState.product.imageUrl}
-                                    title={productState.product.productName} />
+                                    src={product.imageUrl}
+                                    title={product.productName} />
                             </div>
                         </div>
                     </div>
