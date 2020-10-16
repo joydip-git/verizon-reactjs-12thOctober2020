@@ -10,6 +10,13 @@ class ProductContainer extends Component {
         loading: true
     }
     componentDidMount() {
+        // if(localStorage.key('products')){
+        //     this.setState({
+        //         products: JSON.parse(localStorage.getItem('products')),
+        //         loading: false,
+        //         errorMessage: ''
+        //     })
+        // }
         getProducts()
             .then((resp) => {
                 this.setState({

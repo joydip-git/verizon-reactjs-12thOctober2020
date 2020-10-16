@@ -7,12 +7,12 @@ import ProductRoutes from '../../Routes/ProductRoutes';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <ProductDashboard />
-        <br />
-        {/* <Route path='/home' render={() => <span>Home</span>} /> */}
-        <ProductRoutes />
-      </div>
+
+      <ProductDashboard />
+      <br />
+      {/* <Route path='/home' render={() => <span>Home</span>} /> */}
+      <ProductRoutes />
+
     </BrowserRouter>
   );
 }
