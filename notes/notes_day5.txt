@@ -1,0 +1,24 @@
+4. Hooks in React (16.8)
+
+5. HTTP access - fetch/Axios
+6. Redux - state management
+   a. basic redux
+   b. async call in Redux using Thunk middleware
+   c. Saga Middleware - generator function in JS
+7. Routing
+8. Deployment
+
+Routing:
+npm i react-router-dom (react-router)
+routes:-->path:'/products' component:comp-name Route--path, component render={()=>return <span></span>}
+links: anchor --> Link, NavLink
+Redirection: Redirect
+
+Engine: looks for route changes and loads corresponding comonent
+1. BrowserRouter forceRefresh Api
+   HTML5 API (history API -->pushAPI)
+	history.push('/products')
+
+2. MemoryRouter
+
+3. HashRouter: localhost:3000/#/products

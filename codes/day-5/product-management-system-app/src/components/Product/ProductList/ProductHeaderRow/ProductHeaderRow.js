@@ -20,6 +20,9 @@ export default function ProuctHeaderRow() {
                 <td>
                     Rating
                 </td>
+                <td>
+                    Delete
+                </td>
             </tr>
         </thead>
     )
